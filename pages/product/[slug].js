@@ -3,7 +3,6 @@ import { AiFillStar, AiOutlinePlus, AiOutlineStar, AiOutlineMinus } from 'react-
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
-import Image from 'next/image';
 
 const ProductDetails = ({ product, products }) => {
     const { image, name, details, price } = product;
@@ -20,13 +19,13 @@ const ProductDetails = ({ product, products }) => {
     <div>
         <div className='product-detail-container'>
             <div className='image-container'>
-                <Image src={urlFor(image && image[index])}
+                <img src={urlFor(image && image[index])}
                 alt=""
                 className="product-detail-image" />
             </div>
             <div className='small-images-container'>
                 {image?.map((item, i) => (
-                    <Image
+                    <img
                         key={i}
                         src={urlFor(item)} 
                         alt=""
